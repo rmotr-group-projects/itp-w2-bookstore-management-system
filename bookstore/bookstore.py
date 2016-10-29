@@ -77,7 +77,7 @@ def add_book(bookstore, title, isbn, author_id):
         i += 1
     
     # Put the author here
-    bookstore['books'][i] = {'bookstore': bookstore, 'title':title, 'isbn':isbn, 'author_id': author_id}
+    bookstore['books'][i] = {'bookstore': bookstore, 'title':title, 'isbn':isbn, 'author_id': author_id, 'id':i}
     
     # Return the author by default
     return bookstore['books'][i]
@@ -103,18 +103,14 @@ def get_book_by_id(bookstore, book_id):
 def get_books_by_author(bookstore, author_id):
     if not author_id in bookstore['authors']:
         return 'Invalid author ID!'
-    return bookstore['books'][author_id]
-"""    
-store = create_bookstore("rmotr's bookstore")
-
-poe = add_author(store, 'Edgar Alan Poe', 'US')
-borges = add_author(store, 'Jorge Luis Borges', 'AR')
-joyce = add_author(store, 'James Joyce', 'UK')
-
-raven = add_book(store, 'The Raven', 'XXX-1', poe['id'])
-ulysses = add_book(store, 'Ulysses', 'XXX-2', joyce['id'])
-ficciones = add_book(store, 'Ficciones', 'XXX-3', borges['id'])
-aleph = add_book(store, 'El Aleph', 'XXX-4', borges['id'])
-
-print (store)
-"""
+    # This return is wrong, it gives the entire book library
+    # return bookstore['books'][author_id]
+    # This should be it
+    output = []
+    for book in bookstore['books']:
+        if bookstore['books'][book]['author_id'] == author_id:
+            output.append(bookstore['books'][book])
+    return output
+    
+    
+    
