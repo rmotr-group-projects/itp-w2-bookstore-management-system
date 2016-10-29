@@ -37,10 +37,11 @@ def add_book(bookstore, title, isbn, author_id):
 		'id' : bookstore['last_book_id'],
 		'author_id': author_id
 	}
+	
 	bookstore['books'].append(book)
 	bookstore['last_book_id'] += 1
 	return book
-
+	
 def get_book_by_title(bookstore, title):
 	for book in bookstore['books']:
 		if book['title'] == title:
