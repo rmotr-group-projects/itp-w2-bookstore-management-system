@@ -11,7 +11,7 @@ BOOKSTORE
 |---*AUTHORS
 |   |   -This contains all the authors inside
 |   |   -It is a list structure
-|   \---*SINGLE AUTHORS
+|   \~~~*SINGLE AUTHORS
 |       |   -Single authors are dictionaries with the following keys;
 |       |---*NAME
 |       |       -Name of the author
@@ -22,7 +22,7 @@ BOOKSTORE
 \---*BOOKS
     |   -This contains all the books inside
     |   -It is a list structure
-    \---*SINGLE BOOKS
+    \~~~*SINGLE BOOKS
         |   -Single books are dictionaries with the following keys;
         |---*TITLE
         |       -Name of the book
