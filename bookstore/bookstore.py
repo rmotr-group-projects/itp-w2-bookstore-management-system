@@ -24,11 +24,16 @@ def add_author(bookstore, name, nationality):
 
 
 def get_author_by_name(bookstore, name):
-    pass
-
+    for i in bookstore : 
+        if bookstore[i]['name'] == name : 
+            return bookstore[i]
+        else : 
+            return None 
 
 def get_author_by_id(bookstore, author_id):
-    pass
+    for i in bookstore : 
+        if bookstore[i]['id'] == author_id : 
+            return bookstore[i]['name']
 
 
 def add_book(bookstore, title, isbn, author_id):
@@ -39,18 +44,20 @@ def add_book(bookstore, title, isbn, author_id):
         if bookstore[i]['id'] == author_id : 
             book = {
 
-                #'title' : title,
+                'title' : title,
                 'isbn' : isbn,
                 'id' : book_id
 
             }
 
             bookstore[i]['books'][title] = book 
-    return bookstore[i]['books'][title]
+    return bookstore[i]['books']
 
 
 def get_book_by_title(bookstore, title):
-    pass
+    for i in bookstore : 
+        if bookstore[i]['books'][title] == title : 
+            return bookstore[i]['books'][title]
 
 
 def get_book_by_id(bookstore, book_id):
