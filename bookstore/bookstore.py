@@ -68,7 +68,7 @@ def get_book_by_id(bookstore, book_id):
     for i in bookstore['authors'] : 
         for j in range(len(i['books'])) : 
             if i['books'][j]['book_id'] == book_id : 
-                return i
+                return i['books'][j]
             else : 
                 pass
 
