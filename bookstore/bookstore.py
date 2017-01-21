@@ -1,68 +1,81 @@
 import time
 
-def create_bookstore():
-    name = {}
-    return name
+def create_bookstore(name):
+    
+    return {
+
+        'name' : name, 
+        'authors' : []
+    }
 
 def add_author(bookstore, name, nationality):
-
-    my_time = time.time()
     
-    my_dic = {}
-    new_author = {
-            'name' : name, 
-            'nationality' : nationality,
-            'id' : my_time, 
-            'books' : my_dic
-        }
+    ln = len(bookstore['authors'])
+    author = {
 
-    bookstore[name] = new_author
+        'name' : name, 
+        'nationality' : nationality, 
+        'id' : len(bookstore['authors']), 
+        'books' : []
+    }
 
-    
-
-    return bookstore[name]
+    bookstore['authors'].append(author)
+    return bookstore['authors'][ln]
 
 
 def get_author_by_name(bookstore, name):
-    for i in bookstore : 
-        if bookstore[i]['name'] == name : 
-            return bookstore[i]
-        else : 
-            return None 
+    
+    for i in bookstore['authors'] : 
+        if i['name'] == name : 
+            return i
+
 
 def get_author_by_id(bookstore, author_id):
-    for i in bookstore : 
-        if bookstore[i]['id'] == author_id : 
-            return bookstore[i]['name']
-
+    
+    for i in bookstore['authors'] : 
+        if i['id'] == author_id : 
+            return i
+        else : 
+            pass
 
 def add_book(bookstore, title, isbn, author_id):
     
-    book_id = time.time()
+    book = {
 
-    for i in bookstore : 
-        if bookstore[i]['id'] == author_id : 
-            book = {
+        'title' : title, 
+        'isbn' : isbn, 
+        'book_id' : time.time()
+    }
 
-                'title' : title,
-                'isbn' : isbn,
-                'id' : book_id
-
-            }
-
-            bookstore[i]['books'][title] = book 
-    return bookstore[i]['books']
+    for i in bookstore['authors'] : 
+        if i['id'] == author_id : 
+            i['books'].append(book)
+            
+    return book
 
 
 def get_book_by_title(bookstore, title):
-    for i in bookstore : 
-        if bookstore[i]['books'][title] == title : 
-            return bookstore[i]['books'][title]
+    for i in bookstore['authors'] : 
+        for j in range(len(i['books'])) : 
+            if i['books'][j]['title'] == title : 
+                return i['books'][j]
+            else : 
+                pass
 
 
 def get_book_by_id(bookstore, book_id):
-    pass
-
+    
+    for i in bookstore['authors'] : 
+        for j in range(len(i['books'])) : 
+            if i['books'][j]['book_id'] == book_id : 
+                return i
+            else : 
+                pass
 
 def get_books_by_author(bookstore, author_id):
-    pass
+    
+    for i in bookstore['authors'] : 
+        if i['id'] == author_id : 
+            return i['books']
+        else : 
+            pass
