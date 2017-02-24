@@ -54,7 +54,7 @@ def get_book_by_id(bookstore, book_id):
 #Make sure each new book dict becomes the 0th index in the list    
 def get_books_by_author(bookstore, author_id):
     authors_books = []
-    for bkID in bookstore['books']:
+    for bkID in bookstore['books'].keys():
         if bookstore['books'][bkID]['author_id'] == author_id:
             authors_books = [bookstore['books'][bkID]] + authors_books 
     return authors_books
