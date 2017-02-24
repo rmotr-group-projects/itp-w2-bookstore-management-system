@@ -3,7 +3,7 @@
 def create_bookstore(name):
     store = {"name": name,
         "authors": {},
-        "books": {}
+        "books": []
     }
 
     return store
@@ -37,41 +37,37 @@ def get_author_by_id(bookstore, author_id):
 
 
 def add_book(bookstore, title, isbn, author_id):
-    bookstore["books"][title] = {}
+
+    book = { "title": title, 
+        "isbn": isbn,
+        "author_id": author_id,
+        "id": int(isbn[-1])
+    }
+
+    bookstore["books"].append(book)
     
-    bookstore["books"][title]["title"] = title
-    bookstore["books"][title]["isbn"] = isbn
-    bookstore["books"][title]["author_id"] = author_id
-    bookstore["books"][title]["id"] = len(title)
-    
-    return bookstore["books"][title]
+    return book
 
 
 def get_book_by_title(bookstore, title):
     
-    return bookstore["books"][title]
+    for liber in bookstore["books"]:
+        if title in liber.values():
+            return liber
 
 
 def get_book_by_id(bookstore, book_id):
     
-    bookID = {}
-    
     for liber in bookstore["books"]:
-        item = bookstore["books"][liber]
-        for item2 in item:
-            item3 = item[item2]
-            bookID[item3] = item2
-            if book_id in bookID:
-                return bookstore["books"][liber]
+        if book_id in liber.values():
+            return liber
 
 
 def get_books_by_author(bookstore, author_id):
-    
+
     booksbyauthor = []
 
     for liber in bookstore["books"]:
-        item = bookstore["books"][liber]
-        if author_id in item.values():
-            booksbyauthor.append(item)
-            print(item)
+        if author_id in liber.values():
+            booksbyauthor.append(liber)
     return booksbyauthor
