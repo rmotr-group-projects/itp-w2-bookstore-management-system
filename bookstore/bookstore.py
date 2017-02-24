@@ -56,14 +56,9 @@ def get_books_by_author(bookstore, author_id):
     authors_books = []
     for bkID in bookstore['books']:
         if bookstore['books'][bkID]['author_id'] == author_id:
-            book_log = {'title': bookstore['books'][bkID]['title'],
-            'isbn': bookstore['books'][bkID]['isbn'],
-            'author_id': bookstore['books'][bkID]['author_id']}
-            authors_books = [book_log] + authors_books
-            
+            authors_books = [bookstore['books'][bkID]] + authors_books
     return authors_books
             
-
 
 
 #TEST INPUTS
