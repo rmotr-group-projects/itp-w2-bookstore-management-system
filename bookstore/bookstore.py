@@ -1,3 +1,5 @@
+## One more:
+
 def create_bookstore(name):
     store = {"name": name,
         "authors": {},
@@ -71,5 +73,5 @@ def get_books_by_author(bookstore, author_id):
         item = bookstore["books"][liber]
         if author_id in item.values():
             booksbyauthor.append(item)
-
+            print(item)
     return booksbyauthor
