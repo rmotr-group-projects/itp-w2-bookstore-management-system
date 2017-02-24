@@ -1,3 +1,4 @@
+#return dictionary with {'name': name}
 def create_bookstore(name):
     rmotr_bookstore = {}
     rmotr_bookstore['name'] = name
@@ -5,7 +6,7 @@ def create_bookstore(name):
     rmotr_bookstore['books'] = {}
     return rmotr_bookstore
     
- 
+#return dictionary each other within the larger bookstore dict 
 def add_author(bookstore, name, nationality):
     author = {}
     author['name'] = name
@@ -14,38 +15,19 @@ def add_author(bookstore, name, nationality):
     author['id'] = author_id
     bookstore['authors'][author_id] = author
     return author
-    
-    
-"""#store = create_bookstore("rmotr's bookstore")    
-#poe = add_author(store, 'Edgar Allan Poe', 'US')
-#print(poe)
 
-    
-    
-#store = create_bookstore("my_store")
-#poe = add_author(bookstore, 'Edgar Allan Poe', 'US')
-#print add_author("store" , "Edgar Allan Poe", "US")
-    
-    
-
-#store = create_bookstore("bookstore")
-#poe = add_author("bookstore", "Edgar Allan Poe", "US")    
-
-#bookstore[writers_id]['id'] = writers_id"""
-
-    
-    
+#return entire author dictionary accessed via that author's 'name' key
 def get_author_by_name(bookstore, name):
      for auth_id in bookstore['authors']:
          if bookstore['authors'][auth_id]['name'] == name:
              return bookstore['authors'][auth_id]
     
-    
+#return entire author dictionary accessed via that author's 'author_id' key    
 def get_author_by_id(bookstore, author_id):
     return bookstore['authors'][author_id]
     
    
-    
+#return dictionary as added to ['books'] key of larger bookstore dict    
 def add_book(bookstore, title, isbn, author_id):
     book = {}
     book['title'] = title
@@ -56,18 +38,20 @@ def add_book(bookstore, title, isbn, author_id):
     book['id'] = book_id
     bookstore['books'][book_id] = book
     return book
-    
+
+#return a given books dictionary accessed via that same books 'title' key
 def get_book_by_title(bookstore, title):
     for bkID in bookstore['books']:
         if bookstore['books'][bkID]['title'] == title:
             return bookstore['books'][bkID]
 
-
+#return a given books dictionary accessed via that same books 'id' key
 def get_book_by_id(bookstore, book_id):
     return bookstore['books'][book_id]
     
     
-    
+#return a list of the book dictionaries associated with a given author_id
+#Make sure each new book dict becomes the 0th index in the list    
 def get_books_by_author(bookstore, author_id):
     authors_books = []
     for bkID in bookstore['books']:
@@ -80,7 +64,11 @@ def get_books_by_author(bookstore, author_id):
     return authors_books
             
 
-"""store = create_bookstore("rmotr's bookstore")   
+
+
+#TEST CODE
+"""
+store = create_bookstore("rmotr's bookstore")   
 poe = add_author(store, 'Edgar Allan Poe', 'US')
 borges = add_author(store, 'Jorge Luis Borges', 'AR')
 joyce = add_author(store, 'James Joyce', 'UK')
@@ -90,25 +78,11 @@ ulysses = add_book(store, 'Ulysses', 'XXX-2', joyce['id'])
 ficciones = add_book(store, 'Ficciones', 'XXX-3', borges['id'])
 aleph = add_book(store, 'El Aleph', 'XXX-4', borges['id'])
     
-print get_books_by_author(store, borges['id'])"""
-
-
-    
-
-
-"""
-store = create_bookstore("rmotr's bookstore")    
-
-borges = add_author(store, 'Jorge Luis Borges', 'AR')
-
-ficciones = add_book(store, 'Ficciones', 'XXX-3', borges['id'])
-aleph = add_book(store, 'El Aleph', 'XXX-4', borges['id'])
-
-print(get_books_by_author("rmotr's bookstore", borges['id']))
-"""
-
-
 """"
+
+
+#FEDE's ID_GENERATOR CODE
+"""
 writers_id_list = [0] #Global list that stores writers id
 
 def writers_id_generator(): 
