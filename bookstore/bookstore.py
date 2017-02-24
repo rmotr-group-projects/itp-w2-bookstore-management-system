@@ -6,7 +6,7 @@ def create_bookstore(name):
     rmotr_bookstore['books'] = {}
     return rmotr_bookstore
     
-#return dictionary each other within the larger bookstore dict 
+#return dictionary for each author within the larger bookstore dict 
 def add_author(bookstore, name, nationality):
     author = {}
     author['name'] = name
