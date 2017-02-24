@@ -66,36 +66,33 @@ def get_books_by_author(bookstore, author_id):
 
 
 
-#TEST CODE
-"""
-store = create_bookstore("rmotr's bookstore")   
-poe = add_author(store, 'Edgar Allan Poe', 'US')
-borges = add_author(store, 'Jorge Luis Borges', 'AR')
-joyce = add_author(store, 'James Joyce', 'UK')
+#TEST INPUTS
+#store = create_bookstore("rmotr's bookstore")   
+#poe = add_author(store, 'Edgar Allan Poe', 'US')
+#borges = add_author(store, 'Jorge Luis Borges', 'AR')
+#joyce = add_author(store, 'James Joyce', 'UK')
 
-raven = add_book(store, 'The Raven', 'XXX-1', poe['id'])
-ulysses = add_book(store, 'Ulysses', 'XXX-2', joyce['id'])
-ficciones = add_book(store, 'Ficciones', 'XXX-3', borges['id'])
-aleph = add_book(store, 'El Aleph', 'XXX-4', borges['id'])
+#raven = add_book(store, 'The Raven', 'XXX-1', poe['id'])
+#ulysses = add_book(store, 'Ulysses', 'XXX-2', joyce['id'])
+#ficciones = add_book(store, 'Ficciones', 'XXX-3', borges['id'])
+#aleph = add_book(store, 'El Aleph', 'XXX-4', borges['id'])
     
-""""
 
 
 #FEDE's ID_GENERATOR CODE
-"""
-writers_id_list = [0] #Global list that stores writers id
 
-def writers_id_generator(): 
-    id = 0
-    id = max(writers_id_list) + 1
-    writers_id_list.append(id)
-    return id
+#writers_id_list = [0] #Global list that stores writers id
+
+#def writers_id_generator(): 
+ #   id = 0
+  #  id = max(writers_id_list) + 1
+   # writers_id_list.append(id)
+    #return id
     
-books_id_list = [0] #Global list that stores books id
+#books_id_list = [0] #Global list that stores books id
 
-def books_id_generator(): 
-    id = 0
-    id = max(books_id_list) + 1
-    books_id_list.append(id)
-    return id
-"""
+#def books_id_generator(): 
+ #   id = 0
+  #  id = max(books_id_list) + 1
+   # books_id_list.append(id)
+    #return id
