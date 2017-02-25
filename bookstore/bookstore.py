@@ -1,29 +1,52 @@
 def create_bookstore(name):
-    pass
+    store = {'name': name, 
+             'authors': [],
+             'books': []
+    }
+    return store
 
 def add_author(bookstore, name, nationality):
-    pass
+    author = {'name': name,
+              'nationality': nationality,
+              'id': len(bookstore['authors'])}
+    bookstore['authors'].append(author)
+    
+    return author
 
 
 def get_author_by_name(bookstore, name):
-    pass
-
-
+    for elem in range(len(bookstore['authors'])):
+        if bookstore['authors'][elem]['name'] == name:
+            return bookstore['authors'][elem]
+            
 def get_author_by_id(bookstore, author_id):
-    pass
-
+    for elem in range(len(bookstore['authors'])):
+        if bookstore['authors'][elem]['id'] == author_id:
+            return bookstore['authors'][elem]
 
 def add_book(bookstore, title, isbn, author_id):
-    pass
-
-
+    book = {
+        'title' : title,
+        'isbn' : isbn,
+        'author_id' : author_id,
+        'id' : len(bookstore['books'])
+    }
+    bookstore['books'].append(book)
+    return book
+    
 def get_book_by_title(bookstore, title):
-    pass
-
+    for elem in range(len(bookstore['books'])):
+        if bookstore['books'][elem]['title'] == title:
+            return bookstore['books'][elem]
 
 def get_book_by_id(bookstore, book_id):
-    pass
-
+    for elem in range(len(bookstore['books'])):
+        if bookstore['books'][elem]['id'] == book_id:
+            return bookstore['books'][elem]
 
 def get_books_by_author(bookstore, author_id):
-    pass
+    books = []
+    for elem in range(len(bookstore['books'])):
+        if bookstore['books'][elem]['author_id'] == author_id:
+            books.append(bookstore['books'][elem])
+    return books
