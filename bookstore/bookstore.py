@@ -1,64 +1,62 @@
 #return dictionary with {'name': name}
 def create_bookstore(name):
-    rmotr_bookstore = {}
-    rmotr_bookstore['name'] = name
-    rmotr_bookstore['authors'] = {}
-    rmotr_bookstore['books'] = {}
+    rmotr_bookstore = {'name': name, 'authors': [], 'books': []}
     return rmotr_bookstore
-    
-#return dictionary for each author within the larger bookstore dict 
+
+#return dictionary for each author within the larger bookstore dict
 def add_author(bookstore, name, nationality):
-    author = {}
-    author['name'] = name
-    author['nationality'] = nationality
-    author_id = "ID-%d" % (len(bookstore['authors']))
-    author['id'] = author_id
-    bookstore['authors'][author_id] = author
+    author_id = len(bookstore['authors'])
+    author = {'name': name, 'nationality': nationality, 'id': author_id}
+    bookstore['authors'].append(author)
     return author
 
 #return entire author dictionary accessed via that author's 'name' key
 def get_author_by_name(bookstore, name):
      for auth_id in bookstore['authors']:
-         if bookstore['authors'][auth_id]['name'] == name:
-             return bookstore['authors'][auth_id]
-    
-#return entire author dictionary accessed via that author's 'author_id' key    
+         if auth_id['name'] == name:
+             return auth_id
+
+#return entire author dictionary accessed via that author's 'author_id' key
 def get_author_by_id(bookstore, author_id):
     return bookstore['authors'][author_id]
-    
-   
-#return dictionary as added to ['books'] key of larger bookstore dict    
+
+
+#return dictionary as added to ['books'] key of larger bookstore dict
 def add_book(bookstore, title, isbn, author_id):
-    book = {}
-    book['title'] = title
-    book['isbn'] = isbn
-    book['author_id'] = author_id
-    id_ing = author_id + "~" + str(len(bookstore['books']))
-    book_id = id_ing
-    book['id'] = book_id
-    bookstore['books'][book_id] = book
+    book_id = str(author_id) + '-' + str(len(bookstore['books']))
+    book = {'title': title, 'isbn': isbn, 'author_id': author_id, 'id': book_id}
+    bookstore['books'].append(book)
     return book
+    
+"""
+def add_author(bookstore, name, nationality):
+    author_id = len(bookstore['authors'])
+    author = {'name': name, 'nationality': nationality, 'id': author_id}
+    bookstore['authors'].append(author)
+    return author
+    """
 
 #return a given books dictionary accessed via that same books 'title' key
 def get_book_by_title(bookstore, title):
     for bkID in bookstore['books']:
-        if bookstore['books'][bkID]['title'] == title:
-            return bookstore['books'][bkID]
+        if bkID['title'] == title:
+            return bkID
 
-#return a given books dictionary accessed via that same books 'id' key
 def get_book_by_id(bookstore, book_id):
-    return bookstore['books'][book_id]
-    
-    
+    for book in bookstore['books']:
+        if book['id'] == book_id:
+            return book
+            
+        
+
+
 #return a list of the book dictionaries associated with a given author_id
-#Make sure each new book dict becomes the 0th index in the list    
 def get_books_by_author(bookstore, author_id):
     authors_books = []
-    for bkID in bookstore['books'].keys():
-        if bookstore['books'][bkID]['author_id'] == author_id:
-            authors_books = [bookstore['books'][bkID]] + authors_books  
+    for book in bookstore['books']:
+        if book['author_id'] == author_id:
+            authors_books.append(book)
     return authors_books
-            
 
 
 #TEST INPUTS
