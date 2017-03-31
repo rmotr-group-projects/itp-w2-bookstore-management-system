@@ -10,7 +10,6 @@ class BookstoreTestCase(unittest.TestCase):
 
     def test_add_get_authors(self):
         store = create_bookstore("rmotr's bookstore")
-
         poe = add_author(store, 'Edgar Allan Poe', 'US')
         borges = add_author(store, 'Jorge Luis Borges', 'AR')
         joyce = add_author(store, 'James Joyce', 'UK')
