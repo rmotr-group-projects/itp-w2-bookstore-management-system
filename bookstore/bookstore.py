@@ -1,6 +1,5 @@
-id_list = []  # list of unique ID's
+id_list = [] 
 
-# added function to generate a unique ID using random integers; saves to global list
 def autoGen():
     import random
     gen = random.randint(0,10000000)
