@@ -13,7 +13,7 @@ class BookstoreTestCase(unittest.TestCase):
 
         poe = add_author(store, 'Edgar Allan Poe', 'US')
         borges = add_author(store, 'Jorge Luis Borges', 'AR')
-        joyce = add_author(store, 'James Joyce', 'UK')
+        joyce = add_author(store, 'James Joyce', 'UK') 
 
         self.assertEqual(poe['name'], 'Edgar Allan Poe')
         self.assertIsNotNone(poe['id'])
