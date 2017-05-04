@@ -1,4 +1,5 @@
-import sys
+from collections import OrderedDict
+
 author_id_generator = 1000
 book_id_generator = 2000
 
@@ -71,8 +72,6 @@ def get_book_by_id(bookstore, book_id):
 def get_books_by_author(bookstore, author_id):
     books_by_author = []
     for key, value in bookstore['books'].items():
-        #Check the value, but also make sure that they're the same length.
-        #Otherwise, if author_id was 2001, we'd get a hit on 2, 20, and 200.
         if author_id == value['author_id']:
             books_by_author.append(value)
         else:
