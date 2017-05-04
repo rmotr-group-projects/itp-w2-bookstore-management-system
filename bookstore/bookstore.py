@@ -1,3 +1,4 @@
+import sys
 author_id_generator = 1000
 book_id_generator = 2000
 
@@ -79,6 +80,6 @@ def get_books_by_author(bookstore, author_id):
         else:
             pass
     if len(books_by_author) > 0:
-        return sorted(books_by_author, key=lambda k: k['title'])
+        return books_by_author
     else:
         return "No books by that author found!"
