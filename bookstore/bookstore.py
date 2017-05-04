@@ -33,8 +33,7 @@ def get_author_by_name(bookstore, name):
 
 def get_author_by_id(bookstore, author_id):
     for key, value in bookstore['authors'].items():
-		if str(author_id) in str(value['id'])\
-		and len(range(author_id)) == len(range(value['id'])):
+		if str(author_id) in str(value['id']) and len(range(author_id)) == len(range(value['id'])):
 			return bookstore['authors'][key]
 		else:
 			pass
@@ -62,8 +61,7 @@ def get_book_by_title(bookstore, title):
 
 def get_book_by_id(bookstore, book_id):
     for key, value in bookstore['books'].items():
-    	if str(book_id) in str(value['id'])\
-    	and len(range(book_id)) == len(range(value['id'])):
+    	if str(book_id) in str(value['id']) and len(range(book_id)) == len(range(value['id'])):
     		return bookstore['books'][key]
     	else:
     		pass
@@ -72,8 +70,7 @@ def get_book_by_id(bookstore, book_id):
 def get_books_by_author(bookstore, author_id):
   	books_by_author = []
 	for key, value in bookstore['books'].items():
-		if str(author_id) in str(value['author_id'])\
-		and len(str(author_id)) == len(str(value['author_id'])):
+		if str(author_id) in str(value['author_id']) and len(str(author_id)) == len(str(value['author_id'])):
 			books_by_author.append(value)
 		else:
 			pass
