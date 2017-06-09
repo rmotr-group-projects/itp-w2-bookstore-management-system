@@ -1,7 +1,9 @@
+from collections import OrderedDict
+
 def create_bookstore(name):
     store = {'name' : name,
-            'authors' : {},
-            'books' : {},
+            'authors' : OrderedDict(),
+            'books' : OrderedDict(),
             'author_id' : 0,
             'book_id' : 0
     }
