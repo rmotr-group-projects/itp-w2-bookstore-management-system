@@ -1,7 +1,13 @@
 import unittest
 
-from bookstore import *
-
+from bookstore import create_bookstore
+from bookstore import add_author
+from bookstore import get_author_by_name
+from bookstore import get_author_by_id
+from bookstore import add_book
+from bookstore import get_book_by_title
+from bookstore import get_book_by_id
+from bookstore import get_books_by_author
 
 class BookstoreTestCase(unittest.TestCase):
     def test_create_bookstore(self):
