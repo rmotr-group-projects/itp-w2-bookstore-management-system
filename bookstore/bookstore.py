@@ -28,17 +28,17 @@ def get_author_by_name(bookstore, name):
 def get_author_by_id(bookstore, author_id):
     
     # First we go through the bookstore dictionary
-    for bookstore_key in bookstore.keys():
+    for bookstore_value in bookstore.values():
         
         # If the value is a dictionary we continue
-        if type(bookstore[bookstore_key]) is dict:
+        if type(bookstore_value) is dict:
             
             # We go through the dictionary filled with author inforamtion
-            for author_key in bookstore[bookstore_key].keys():
+            for author_key in bookstore_value.keys():
                 
                 # When we find the matching ID we return the entire authors dictionary
-                if bookstore[bookstore_key][author_key] == author_id:
-                    return bookstore[bookstore_key]
+                if bookstore_values[author_key] == author_id:
+                    return bookstore_values
 
 
 def add_book(bookstore, title, isbn, author_id):
