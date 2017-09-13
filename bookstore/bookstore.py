@@ -1,10 +1,19 @@
 def create_bookstore(name):
+    
+    # Create the bookstore dictionary where names, authors, and books will be stored
     bookstore = {}
+    
+    # Create a key 'name' where the bookstore name will be stored
     bookstore['name'] = name
+    # return bookstore to user
     return bookstore
 
 def add_author(bookstore, name, nationality):
-    pass
+    # Adding the author to the bookstore dictionary
+    bookstore[name] = {'name': name, 'nationality': nationality,'id':hash(name)}
+    
+    # Returning dictionary which contains the authors information
+    return bookstore[name]
 
 
 def get_author_by_name(bookstore, name):
