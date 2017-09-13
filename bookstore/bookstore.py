@@ -1,5 +1,7 @@
 def create_bookstore(name):
-    pass
+    bookstore = {}
+    bookstore['name'] = name
+    return bookstore
 
 def add_author(bookstore, name, nationality):
     pass
