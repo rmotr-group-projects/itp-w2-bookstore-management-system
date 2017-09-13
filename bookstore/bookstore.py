@@ -33,12 +33,12 @@ def get_author_by_id(bookstore, author_id):
         # If the value is a dictionary we continue
         if type(bookstore_value) is dict:
             
-            # We go through the dictionary filled with author inforamtion
+            # We go through the dictionary filled with author information
             for author_key in bookstore_value.keys():
                 
                 # When we find the matching ID we return the entire authors dictionary
-                if bookstore_values[author_key] == author_id:
-                    return bookstore_values
+                if bookstore_value[author_key] == author_id:
+                    return bookstore_value
 
 
 def add_book(bookstore, title, isbn, author_id):
