@@ -1,6 +1,11 @@
 import unittest
 
 from bookstore import *
+#from bookstore_sol1 import *
+#from bookstore_sol2 import *
+#from bookstore_sol3 import *
+
+
 
 
 class BookstoreTestCase(unittest.TestCase):
