@@ -61,14 +61,3 @@ def get_books_by_author(bookstore, author_id):
         return author_book_list
     return "Author Has No Books"
             
-'''
-store = create_bookstore("rmotr's bookstore")
-poe = add_author(store, 'Edgar Alan Poe', 'US')
-joyce = add_author(store, 'James Joyce', 'UK')
-
-ulysses = add_book(store, 'Ulysses', 'XXX-2', joyce['id'])
-
-print (ulysses['title'])
-
-print get_book_by_id(store, 'Ulysses1')
-'''
