@@ -1,5 +1,8 @@
 def create_bookstore(name):
-    pass
+    store = {}
+    store.setdefault('name', name)
+
+    return store
 
 def add_author(bookstore, name, nationality):
     pass
