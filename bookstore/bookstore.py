@@ -1,10 +1,21 @@
 dictionary = {}
 
+author_id_list = []
+book_id_list = []
+def author_id_assign(author):
+    count = len(author_id_list)
+    return count
+
+def book_id_assign(author):
+    count = len(book_id_list)
+    return count
+
 def create_bookstore(name):
     dictionary['name'] = name
     dictionary['author'] = {}
     dictionary['books'] = {}
     return dictionary
+    
     
 def add_author(bookstore, name, nationality):
     name1 = dictionary['author']
@@ -12,7 +23,8 @@ def add_author(bookstore, name, nationality):
         name1[name] = {}
         name1[name]['name'] = name
         name1[name]['nationality'] = nationality
-        name1[name]['id'] = name + '1'
+        name1[name]['id'] = author_id_assign(name)
+        author_id_list.append(name)
    # print (name1)
     return name1[name]
 
@@ -28,13 +40,15 @@ def get_author_by_id(bookstore, author_id):
             return dictionary['author'][author]
         return "Author ID Does Not Exist"
 
+
 def add_book(bookstore, title, isbn, author_id):
     if title not in dictionary['books']:
         dictionary['books'][title] = {}
         dictionary['books'][title]['title'] = title
         dictionary['books'][title]['isbn'] = isbn
-        dictionary['books'][title]['id'] = title + '1'
+        dictionary['books'][title]['id'] = book_id_assign(title)
         dictionary['books'][title]['author_id'] = author_id
+        book_id_list.append(title)
     #print (dictionary['books'])
     return dictionary['books'][title]
 
@@ -52,11 +66,10 @@ def get_book_by_id(bookstore, book_id):
 
 def get_books_by_author(bookstore, author_id):
     author_book_list = []
-    
     for book in dictionary['books']:
         if dictionary['books'][book]['author_id'] == author_id:
             author_book_list.append(dictionary['books'][book])
-    print (author_book_list)
+    #print (author_book_list)
     if author_book_list > 0:
         return author_book_list
     return "Author Has No Books"
