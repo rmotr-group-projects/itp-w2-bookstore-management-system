@@ -11,7 +11,7 @@ test:
 
 test-cov:
 	@echo $(TAG)Running tests with coverage$(END)
-	PYTHONPATH=. py.test --cov=$(PROJECT_PACKAGE) tests
+	PYTHONPATH=. py.test --cov=$(PROJECT_PACKAGE) test_bookstore.py
 
 coverage:
 	@echo $(TAG)Coverage report$(END)
