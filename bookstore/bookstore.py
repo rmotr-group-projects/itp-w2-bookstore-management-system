@@ -50,13 +50,12 @@ def get_author_by_id(bookstore, author_id):
             return author
 
 
-#
-# Use the same method as authors to auto increase the book ID count.Increment by 1
-#
+# Use the same method as authors to auto increase the book ID count.
+# Increment by 1
 
 
 def add_book(bookstore, title, isbn, author_id):
-    book = {'title': title, 'isbn': isbn, 'author_id': author_id, 'id': bookstore['book_id']}
+    book = {'title' : title, 'isbn' : isbn, 'author_id' : author_id, 'id' : bookstore['book_id']}
     bookstore['book_id'] += 1
     bookstore['books'].append(book)
     return book
