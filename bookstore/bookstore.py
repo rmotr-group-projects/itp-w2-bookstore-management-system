@@ -70,7 +70,7 @@ def get_books_by_author(bookstore, author_id):
         if dictionary['books'][book]['author_id'] == author_id:
             author_book_list.append(dictionary['books'][book])
     #print (author_book_list)
-    if author_book_list > 0:
+    if len(author_book_list) > 0:
         return author_book_list
     return "Author Has No Books"
             
