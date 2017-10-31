@@ -7,7 +7,7 @@ PROJECT_PACKAGE=bookstore
 
 test:
 	@echo $(TAG)Running tests$(END)
-	PYTHONPATH=. py.test -s tests
+	PYTHONPATH=. py.test -s test_bookstore.py
 
 test-cov:
 	@echo $(TAG)Running tests with coverage$(END)
@@ -15,5 +15,5 @@ test-cov:
 
 coverage:
 	@echo $(TAG)Coverage report$(END)
-	@PYTHONPATH=. coverage run --source=$(PROJECT_PACKAGE) $(shell which py.test) ./tests -q --tb=no >/dev/null; true
-	@coverage report
+	@PYTHONPATH=. coverage run --source=$(PROJECT_PACKAGE) $(shell which py.test) ./test_bookstore.py -q --tb=no >/dev/null; true
+@coverage report
