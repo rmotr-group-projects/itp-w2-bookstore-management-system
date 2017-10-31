@@ -1,75 +1,63 @@
+#auto-increment integer ID
 def create_bookstore(name):
-    store = {
+    return {
         'name': name,
+        'last_author_id': 0,
+        'last_book_id': 0, # here was the missing comma earlier
         'authors': [],
-        'books': []
+        'books': [],
     }
     
-    return store
-
+#add this "author" to the list of `authors` in the bookstore with name, nationality and id
 def add_author(bookstore, name, nationality):
-    
-    id = len(bookstore['authors'])
-    
+    bookstore['last_author_id'] += 1
     author = {
-        'id': id + 1,
-        'name' : name,
-        'nationality' : nationality
+        'name': name,
+        'nationality': nationality,
+        'id': bookstore['last_author_id']
     }
     
     bookstore['authors'].append(author)
-    
     return author
 
 
+#Loop searching for string "authors", return author name
 def get_author_by_name(bookstore, name):
     for author in bookstore['authors']:
         if author['name'] == name:
             return author
-            
-    return None
 
-
+#Loop searching for author id match, return author name
 def get_author_by_id(bookstore, author_id):
     for author in bookstore['authors']:
         if author['id'] == author_id:
             return author
             
-    return None
-
-
+#add this "book" to the list of `books` in the bookstore with title, isbn, author id,and id
 def add_book(bookstore, title, isbn, author_id):
-    
-    id = len(bookstore['books'])
-    
+    bookstore['last_book_id'] += 1
     book = {
-        'id': id + 1,
-        'title' : title,
-        'isbn' : isbn,
-        'author_id' : author_id
+        'title': title,
+        'isbn': isbn,
+        'author_id': author_id,
+        'id': bookstore['last_book_id']
     }
-    
     bookstore['books'].append(book)
-    
     return book
 
-
+#Loop search for title match
 def get_book_by_title(bookstore, title):
     for book in bookstore['books']:
         if book['title'] == title:
             return book
-            
-    return None
 
-
-def get_book_by_id(bookstore, book_id):
+#Loop search for book isbn match
+def get_book_by_id(bookstore, book_isbn):
     for book in bookstore['books']:
-        if book['id'] == book_id:
+        if book['id'] == book_isbn:
             return book
-            
-    return None
 
-
+#Loop search for book author id match
 def get_books_by_author(bookstore, author_id):
     books = []
     
