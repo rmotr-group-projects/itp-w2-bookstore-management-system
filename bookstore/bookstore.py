@@ -23,7 +23,7 @@ def create_bookstore(name):
 #    bookstore['last_author_id'] += 1
 #    author = {
 #        'name': name,
-#        'country': nationality,
+#        'nationality': nationality,
 #        'id': bookstore['last_author_id']
 #    }
 #    bookstore['authors'].append(author)
@@ -32,26 +32,26 @@ def create_bookstore(name):
 
 
 def add_author(bookstore, name, nationality):
-    author = {'name': name, 'country': nationality, 'id': bookstore['author_id']}
+    author = {'name': name, 'nationality': nationality, 'id': bookstore['author_id']}
     bookstore['author_id'] += 1
     bookstore['authors'].append(author)
     return author
 
 
 def get_author_by_name(bookstore, name):
-    for author in bookstore['author']:
+    for author in bookstore['authors']:
         if name == author['name']:
             return author
 
 
 def get_author_by_id(bookstore, author_id):
-    for author in bookstore['author']:
+    for author in bookstore['authors']:
         if author_id == author['id']:
             return author
 
 
 #
-#Use the same method as authors to auto increase the book ID count.Increment by 1
+# Use the same method as authors to auto increase the book ID count.Increment by 1
 #
 
 
