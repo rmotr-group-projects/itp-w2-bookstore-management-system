@@ -16,4 +16,4 @@ test-cov:
 coverage:
 	@echo $(TAG)Coverage report$(END)
 	@PYTHONPATH=. coverage run --source=$(PROJECT_PACKAGE) $(shell which py.test) ./test_bookstore.py -q --tb=no >/dev/null; true
-@coverage report
+	@coverage report
