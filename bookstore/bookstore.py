@@ -76,6 +76,6 @@ def get_book_by_id(bookstore, book_id):
 def get_books_by_author(bookstore, author_id):
     books_by_author_list = []
     for book in bookstore['books']:
-        if author_id == book['last_author_id']:
+        if author_id == book['author_id']:
             books_by_author_list.append(book)
     return books_by_author_list
