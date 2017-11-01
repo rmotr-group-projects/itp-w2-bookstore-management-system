@@ -70,4 +70,3 @@ def get_books_by_author(bookstore, author_id):
         if i['author_id'] == author_id:
             total_books.append(i)
     return total_books
-
