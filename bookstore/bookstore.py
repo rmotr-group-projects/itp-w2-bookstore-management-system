@@ -39,7 +39,7 @@ def get_author_by_id(bookstore, author_id):
         if dictionary['author'][author]['id'] == author_id:
       #      print (dictionary['author'][author])
             return dictionary['author'][author]
-        return "Author ID Does Not Exist"
+    return "Author ID Does Not Exist"
 
 
 def add_book(bookstore, title, isbn, author_id):
@@ -76,3 +76,28 @@ def get_books_by_author(bookstore, author_id):
     return "Author Has No Books"
 
 
+store = create_bookstore("rmotr's bookstore")
+
+poe = add_author(store, 'Edgar Alan Poe', 'US')
+borges = add_author(store, 'Jorge Luis Borges', 'AR')
+joyce = add_author(store, 'James Joyce', 'UK')
+
+raven = add_book(store, 'The Raven', 'XXX-1', poe['id'])
+ulysses = add_book(store, 'Ulysses', 'XXX-2', joyce['id'])
+ficciones = add_book(store, 'Ficciones', 'XXX-3', borges['id'])
+aleph = add_book(store, 'El Aleph', 'XXX-4', borges['id'])
+
+books = get_books_by_author(store, borges['id'])
+author = get_author_by_id(store, poe['id'])
+test = (author['id'], poe['id'])
+print (books)
+
+
+print (author)
+print (type(author['id']))
+print (test)
+
+
+
+book1 = books[0]
+print (book1)
