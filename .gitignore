@@ -1,5 +1,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+__init__.py
+*.pyc
+*.json
+*.cfg
 *.py[cod]
 *$py.class
 
@@ -8,6 +12,9 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+bin/
+include/
+lib/
 env/
 build/
 develop-eggs/
@@ -61,3 +68,6 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 .~c9*
+
+# test editor
+.vscode
