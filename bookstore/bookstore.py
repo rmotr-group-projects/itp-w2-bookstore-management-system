@@ -45,7 +45,7 @@ def get_book_by_title(bookstore, title):
 
 def get_book_by_id(bookstore, book_id):
     for book in bookstore['books']:
-        if books['id']==book_id:
+        if book['id']==book_id:
             return book
 
 
