@@ -34,6 +34,7 @@ def add_book(bookstore, title, isbn, author_id):
           'author_id':author_id,
           'book_id': bookstore['last_book_id']}
     bookstore['books'].append(book)
+    return book
 
 
 def get_book_by_title(bookstore, title):
