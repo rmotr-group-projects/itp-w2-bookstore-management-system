@@ -32,7 +32,7 @@ def add_book(bookstore, title, isbn, author_id):
     book = {'title':title,
           'isbn':isbn,
           'author_id':author_id,
-          'book_id': bookstore['last_book_id']}
+          'id': bookstore['last_book_id']}
     bookstore['books'].append(book)
     return book
 
@@ -45,14 +45,14 @@ def get_book_by_title(bookstore, title):
 
 def get_book_by_id(bookstore, book_id):
     for book in bookstore['books']:
-        if books['book_id']==book_id:
+        if books['id']==book_id:
             return book
 
 
 def get_books_by_author(bookstore, author_id):
-    books={}
-    for authord_id in bookstore['books']:
-        if bookstore[authord_id]==authord_id:
+    books=[]
+    for book in bookstore['books']:
+        if book['author_id']==author_id:
            books.append(book)
     return books
         
