@@ -1,17 +1,29 @@
 def create_bookstore(name):
-    pass
+    bookstore = {
+        'name': name,
+        'authors': [],
+        'books': []
+    }
+    return bookstore
 
 
 def get_bookstore_name(bookstore):
-    pass
+    return bookstore['name']
 
 
 def add_author(bookstore, name, nationality):
-    pass
+    author = {
+        'name': name,
+        'nationality': nationality
+    }
+    bookstore['authors'].append(author)
+    return author
 
 
 def get_author_by_name(bookstore, name):
-    pass
+    for author in bookstore['authors']:
+        if author['name'] == name:
+            return author
 
 
 def add_book(bookstore, title, isbn, author):
