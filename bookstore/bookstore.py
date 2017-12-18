@@ -2,9 +2,7 @@ def create_bookstore(name):
     return {
         'name': name,
         'books': [],
-        'authors': [],
-        'author_id': 0,
-        'book_id': 0
+        'authors': []
     }
 
 
@@ -13,7 +11,7 @@ def get_bookstore_name(bookstore):
 
 
 def add_author(bookstore, name, nationality):
-    author = {'name':name, 'nationality':nationality}
+    author = {'name': name, 'nationality': nationality}
     bookstore['authors'].append(author)
     
     return author
@@ -39,14 +37,14 @@ def add_book(bookstore, title, isbn, author):
 def get_book_by_title(bookstore, title):
     for book in bookstore['books']:
         if book['title'] == title:
-            return title
+            return book
 
 
 def get_books_by_author(bookstore, author):
     result = []
     for book in bookstore['books']:
         if book['author'] == author:
-            result.append(author)
+            result.append(book)
     
     return result
     
