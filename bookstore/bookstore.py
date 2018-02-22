@@ -37,7 +37,7 @@ def add_book(bookstore, title, isbn, author):
 def get_book_by_title(bookstore, title):
     for book in bookstore['books']:
         if title == book['title']:
-            return "hi"
+            return book
 
 def get_books_by_author(bookstore, author):
     results = []
