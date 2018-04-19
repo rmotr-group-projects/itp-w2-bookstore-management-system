@@ -15,7 +15,7 @@ def add_author(bookstore, name, nationality):
     author = {
         'name': name,
         'nationality': nationality
-    }
+    } 
     # bookstore['authors'].append(author)
     bookstore.get('authors').append(author)
     return author
