@@ -23,7 +23,7 @@ def add_author(bookstore, name, nationality):
 def get_author_by_name(bookstore, name):
     for author in bookstore['authors']:
         if author['name'] == name:
-            return author
+            return author 
 
 
 def add_book(bookstore, title, isbn, author):
