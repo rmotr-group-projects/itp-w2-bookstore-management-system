@@ -11,7 +11,7 @@ def get_bookstore_name(bookstore):
 
 
 def add_author(bookstore, name, nationality):
-    author = {
+    author = { 
         'name': name,
         'nationality': nationality
     }
