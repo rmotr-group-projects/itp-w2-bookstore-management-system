@@ -60,12 +60,5 @@ def test_add_get_books():
     books = get_books_by_author(store, 'Jorge Luis Borges')
     assert len(books) == 2
 
-    book1 = books[0]
-    assert book1['title'] == 'Ficciones'
-    assert book1['isbn'] == 'XXX-3'
-    assert book1['author'] == 'Jorge Luis Borges'
-
-    book2 = books[1]
-    assert book2['title'] == 'El Aleph'
-    assert book2['isbn'] == 'XXX-4'
-    assert book1['author'] == 'Jorge Luis Borges'
+    assert ficciones in books
+    assert aleph in books
