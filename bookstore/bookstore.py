@@ -20,7 +20,7 @@ name = 'rmotr's bookstore'
 
 def add_author(bookstore, name, nationality):
     author = {
-        'name': name
+        'name': name,
         'nationality': nationality
     }
     bookstore['authors'].append(author)
