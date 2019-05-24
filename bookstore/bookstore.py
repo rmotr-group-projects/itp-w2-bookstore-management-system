@@ -1,3 +1,4 @@
+#helper functions
 def create_bookstore(name):
     bookstore = {
         'shop_name':name,
