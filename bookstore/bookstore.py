@@ -25,7 +25,8 @@ def get_author_by_name(bookstore, name):
     author_list = bookstore['authors']
     
     for author in author_list:
-        if name.lower() in  author['name'].lower():               return author
+        if name.lower() in  author['name'].lower():               
+            return author
 
 
 def add_book(bookstore, title, isbn, author):
