@@ -7,21 +7,19 @@ def create_bookstore(name):
 
 
 def get_bookstore_name(bookstore):
-    return bookstore ['shop name']
-   
+    return bookstore['shop name']
 
 
 def add_author(bookstore, name, nationality):
     author = {
         'name': name,
         'nationality': nationality,
-        #'books': [],
+#         'books': []
     }
-    bookstore['authors'].append(author)
-    return author
-
-
     
+    bookstore['authors'].append(author)
+    
+    return author
 
 def get_author_by_name(bookstore, name):
     author_list = bookstore['authors']
@@ -29,9 +27,6 @@ def get_author_by_name(bookstore, name):
     for author in author_list:
         if name.lower() in author['name'].lower():
             return author
-        #if author['name'] == name:
-         #   return author
-    
 
 
 def add_book(bookstore, title, isbn, author):
@@ -40,10 +35,14 @@ def add_book(bookstore, title, isbn, author):
         'isbn': isbn,
         'author': author,
     }
+    
     bookstore['books'].append(book)
-          
+    
+#     for writer in bookstore['authors']:
+#         if author.lower() in writer['name'].lower():
+#             writer['books'].append(book)
+    
     return book
-
 
 
 def get_book_by_title(bookstore, title):
@@ -52,17 +51,16 @@ def get_book_by_title(bookstore, title):
     for book in book_list:
         if title.lower() in book['title'].lower():
             return book
-        else:
-            return 'Book not found'
- 
-
+    else:
+        return 'Book not found'
 
 def get_books_by_author(bookstore, author):
     books = []
-    book_list = bookstore['book']
+    book_list = bookstore['books']
     
     for book in book_list:
-        if author.lower() in book ['author'].lower():
+        if author.lower() in book['author'].lower():
             books.append(book)
     
+    print(bookstore)
     return books
