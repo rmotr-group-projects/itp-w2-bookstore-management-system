@@ -1,26 +1,78 @@
 def create_bookstore(name):
-    pass
-
+    store = {
+        'name': name,
+        'authors': [],
+        'books': [],
+    }
+    return store
 
 def get_bookstore_name(bookstore):
-    pass
-
+    return bookstore['name']
 
 def add_author(bookstore, name, nationality):
-    pass
-
+    author = {
+        'name': name,
+        'nationality': nationality,
+    }
+    bookstore['authors'].append(author)
+    return author
 
 def get_author_by_name(bookstore, name):
-    pass
+    author_list = bookstore['authors']
+    
+    for author in author_list:
+        if name == author['name']:
+            return author
 
 
 def add_book(bookstore, title, isbn, author):
-    pass
-
+    book = {
+        'title': title,
+        'isbn': isbn,
+        'author': author
+    }
+    bookstore['books'].append(book)
+    return book
 
 def get_book_by_title(bookstore, title):
-    pass
-
+    book_list = bookstore['books']
+    for book in book_list:
+        if title == book['title']:
+            return book
 
 def get_books_by_author(bookstore, author):
-    pass
+    books = []
+    book_list = bookstore['books']
+    
+    for book in book_list:
+        if author == book['author']:
+            books.append(book)
+            
+    return books
+
+
+'''
+bookstore = {
+    'name': "rmotr's bookstore",
+    'authors': [
+        {
+            'name': 'Edgar Allen Poe',
+            'nationality': 'US'
+        },
+        {
+            'name': 'Jorge Luis Borges',
+            'nationality': 'AR'
+        },
+        {
+            'name': 'James Joyce',
+            'nationality': 'UK'
+        }
+    ]
+    'books': [
+        {El Aleph}, 
+        {The Raven}, 
+        {Ulysses}, 
+        {Ficciones},
+    ]
+}
+'''
